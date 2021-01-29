@@ -1,3 +1,13 @@
+## Bridge Beyond Client
+
+- Built with React
+
+- Built by [Carlo Berardelli](https://carloberardelli.com/) January 2021
+
+- [Bridge Beyond](https://www.bridgebeyond.org/) - a nonprofit organization that is focused on increasing accessibility of various resources for people who experience homelessness and housing instability.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
