@@ -5,7 +5,7 @@ function Footer() {
       <div className="Footer">
         
           <p>
-            hii I'm the footer
+            Hi Buddy I'm the Footer
           </p>
           
       </div>

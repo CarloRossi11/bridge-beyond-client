@@ -5,7 +5,7 @@ function Header() {
       <div className="Header">
         
           <p>
-            sup yall I'm the header
+            Hi Buddy I'm the Header
           </p>
           
       </div>
