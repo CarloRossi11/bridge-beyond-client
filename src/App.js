@@ -1,19 +1,23 @@
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Header from './components/Header'
 import Footer from './components/Footer'
-import { useEffect, useState } from 'react';
+import {getList} from './components/List'
 
 function App() {
-
-  const [resource, setResource] = useState(null)
   const [loading, setLoading] = useState(true)
+  const [list, setList] = useState([]);
 
-  useEffect(async () => {
-    const response = await fetch('https://buddy-system-api.herokuapp.com/resources')
-    const data = await response.json()
-    const [item] = data
-    setResource(item)
-    setLoading(false)
+  useEffect(() => {
+    let mounted = true;
+    getList()
+      .then(items => {
+        if(mounted) {
+          setList(items)
+        }
+      })
+      setLoading(false)
+    return () => mounted = false;
   }, [])
 
   return (
@@ -22,7 +26,11 @@ function App() {
       <div >
         <h1>Bridge Beyond Buddy</h1>
 
-        {loading ? <div>...Loading</div> : <div>{resource.name}</div>}
+        <ul>
+          {loading ? <div>...Loading</div> : list.map(item => <li key={item.item}>{item.name}</li>)}
+        </ul>
+
+        {/* {loading ? <div>...Loading</div> : <div>{resource.name}</div>} */}
 
       </div>
       <Footer/>
