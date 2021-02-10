@@ -27,7 +27,10 @@ function App() {
         <h1>Bridge Beyond Buddy</h1>
 
         <ul>
-          {loading ? <div>...Loading</div> : list.map(item => <li key={item.item}>{item.name}</li>)}
+          {loading ? <div>...Loading</div> : list.map(item => 
+          // can add key={item.item} in li tag
+          <li>
+            {item.name} </li>)}
         </ul>
 
         {/* {loading ? <div>...Loading</div> : <div>{resource.name}</div>} */}
