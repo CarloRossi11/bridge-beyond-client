@@ -11,9 +11,9 @@ function App() {
   useEffect(() => {
     let mounted = true;
     getList()
-      .then(items => {
+      .then(resources => {
         if(mounted) {
-          setList(items)
+          setList(resources)
         }
       })
       setLoading(false)
@@ -27,10 +27,13 @@ function App() {
         <h1>Bridge Beyond Buddy</h1>
 
         <ul>
-          {loading ? <div>...Loading</div> : list.map(item => 
-          // can add key={item.item} in li tag
-          <li>
-            {item.name} </li>)}
+          {loading ? <div>...Loading</div> : list.map(resource =>
+            <div> 
+              <h2>{resource.name}</h2>
+              <h4>{resource.description}</h4>
+              {resource.categories.map(category => <div>{category.name}</div>)}
+            </div>
+            )}
         </ul>
 
         {/* {loading ? <div>...Loading</div> : <div>{resource.name}</div>} */}
