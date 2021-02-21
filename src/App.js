@@ -42,7 +42,9 @@ function App() {
             <div className="resources" key={resource.id}>
               <h2>{resource.name}</h2>
               <p>{resource.description}</p>
-              {resource.categories.map(category => <div>{category.name}</div>)}
+              <a id="bridge" href={resource.link} target="blank">Visit {resource.name} Website</a>
+              <p>{resource.contact_information}</p>
+              {/* {resource.categories.map(category => <div>{category.name}</div>)} */}
             </div>
             )}
         </ul>
