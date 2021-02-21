@@ -32,16 +32,16 @@ function App() {
       <Header/>
 
       <div >
-        <h1>Bridge Beyond Buddy</h1>
+        <h1>Bridge Beyond Outreach</h1>
         <div className="search">
           <p className="searchtext">Search by Resource Name</p>
           <input type="text" placeholder="Resource Name" onChange={e =>setSearch(e.target.value) }/>
         </div>
         <ul>
           {loading ? <div>...Loading</div> : filteredList.map(resource =>
-            <div key={resource.id}>
+            <div className="resources" key={resource.id}>
               <h2>{resource.name}</h2>
-              <h4>{resource.description}</h4>
+              <p>{resource.description}</p>
               {resource.categories.map(category => <div>{category.name}</div>)}
             </div>
             )}

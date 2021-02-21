@@ -2,11 +2,12 @@ import React from  "react"
 
 function Footer() {
     return (
-      <div className="Footer">
+      <div className="footer">
         
           <p>
-            Hi Buddy I'm the Footer
+          Visit <a id="bridge" href="https://www.bridgebeyond.org/">Bridge Beyond</a> for more information
           </p>
+          <a id="bridge" href="https://www.bridgebeyond.org/contact-us">Contact Us</a>
           
       </div>
     );
