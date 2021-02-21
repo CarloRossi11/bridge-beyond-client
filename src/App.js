@@ -44,6 +44,7 @@ function App() {
               <p>{resource.description}</p>
               <a id="bridge" href={resource.link} target="blank">Visit {resource.name} Website</a>
               <p>{resource.contact_information}</p>
+              {/* category info */}
               {/* {resource.categories.map(category => <div>{category.name}</div>)} */}
             </div>
             )}
