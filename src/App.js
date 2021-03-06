@@ -3,13 +3,15 @@ import './App.css';
 import Header from './components/Header'
 import Footer from './components/Footer'
 import {getList} from './components/List'
+import {getCats} from './components/CatCall'
 
 function App() {
   const [loading, setLoading] = useState(true)
   const [list, setList] = useState([]);
+  const [cats, setCats] = useState([]);
   const [search, setSearch] = useState('')
 
-  //Fetch Logic
+  //Fetch Resource Logic
   useEffect(() => {
     let mounted = true;
     getList()
@@ -22,6 +24,18 @@ function App() {
     return () => mounted = false;
   }, [])
 
+    //Fetch Category Logic
+    useEffect(() => {
+      let mounted = true;
+      getCats()
+        .then(categories => {
+          if(mounted) {
+            setCats(categories)
+          }
+        })
+        setLoading(false)
+      return () => mounted = false;
+    }, [])
   //Search Logic
   const filteredList = list.filter( resource => {
     return resource.name.toLowerCase().includes(search.toLowerCase())
@@ -37,6 +51,11 @@ function App() {
           <p className="searchtext">Search by Resource Name</p>
           <input type="text" placeholder="Resource Name" onChange={e =>setSearch(e.target.value) }/>
         </div>
+        <div className="cats">          
+          {cats.map(category => 
+            <div>{category.name}</div>
+          )}
+        </div>
         <ul>
           {loading ? <div>...Loading</div> : filteredList.map(resource =>
             <div className="resources" key={resource.id}>
@@ -45,7 +64,7 @@ function App() {
               <a id="bridge" href={resource.link} target="blank">Visit {resource.name} Website</a>
               <p>{resource.contact_information}</p>
               {/* category info */}
-              {/* {resource.categories.map(category => <div>{category.name}</div>)} */}
+              {resource.categories.map(category => <div>{category.name}</div>)}
             </div>
             )}
         </ul>
