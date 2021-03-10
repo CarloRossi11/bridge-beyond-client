@@ -4,18 +4,20 @@ import propTypes from "prop-types"
 function Checkbox({label, selected, styleClass, onChange}) {
 
     const handleChange = (event) => {
-      const {selected} = event.target
-      onChange(selected)
+      const {checked} = event.target
+      onChange(checked)
     }
 
     return(
-        <div className={`form-group form-check ${styleClass}`}>
-            <input 
+        <div className={`form-group ${styleClass}`}>
+            <label>
+                <input 
                 type="checkbox" 
                 value={selected} 
                 defaultChecked = {selected}
                 onChange={handleChange}/>
-                <label>{label}</label>
+            {label}
+            </label>
         </div>
     )
   }
