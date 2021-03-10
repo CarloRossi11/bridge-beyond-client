@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Checkbox from './components/Checkbox'
+import Dropdown from './components/Dropdown'
 import { getList } from './components/List'
 import { getCats } from './components/CatCall'
 
