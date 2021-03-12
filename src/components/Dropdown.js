@@ -9,7 +9,9 @@ function Dropdown({value, data, placeholder, styleClass, onChange}) {
 
     return(
         <div className={`form-group ${styleClass}`}>
-            <select value={value} ClassName="form-control" onChange={handleChange}>
+            <select 
+            value={value} 
+            ClassName="form-control" onChange={handleChange}>
                 <option value="">{placeholder}</option>
                 {data.map((item, key) => (
                     <option 

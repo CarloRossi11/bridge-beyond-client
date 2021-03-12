@@ -50,6 +50,10 @@ function App() {
     setChecked(checked)
   }
 
+  const handleDropdown =() => {
+    
+  }
+
   return (
     <div className="App">
       <Header/>
@@ -63,11 +67,18 @@ function App() {
         </div>
 
         <div className="cats">          
-          {cats.map(category => 
+          {/* {cats.map(category => 
             // <div>{category.name}{category.id}</div>
             <Checkbox label={category.name} onChange={handleCheckbox} selected={checked}/>
-          )}
+          )} */}
         </div>
+
+        <Dropdown 
+          data={cats.map(category => 
+            <Checkbox label={category.name} onChange={handleCheckbox} selected={checked}/>
+          )}
+          placeholder='Categories'
+          onChange={handleDropdown}/>
 
         <ul>
           {loading ? <div>...Loading</div> : filteredList.map(resource =>
