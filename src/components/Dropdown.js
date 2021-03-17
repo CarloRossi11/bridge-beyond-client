@@ -1,42 +1,16 @@
-import React from  "react"
-import propTypes from "prop-types"
+import React, { useState } from 'react'
 
-function Dropdown({value, data, placeholder, styleClass, onChange}) {
+function Dropdown(props) {
 
-    const handleChange = (event) => {
-      console.log(event)
-    }
+    const [open, setOpen] = useState(false)
 
     return(
-        <div className={`form-group ${styleClass}`}>
-            <select 
-            value={value} 
-            ClassName="form-control" onChange={handleChange}>
-                <option value="">{placeholder}</option>
-                {data.map((item, key) => (
-                    <option 
-                        key={key} 
-                        value={item.value}>
-                        {item.label}
-                    </option>
-                ))}
-            </select>
-        </div>
+    <li className="nav-item">
+      <a href="#" className="icon-button" onClick={() => {setOpen(!open)}}>
+        Categories
+      </a>
+      {open && props.children}
+    </li>
     )
 }
-
-Dropdown.propTypes = {
-  value: propTypes.string,
-  placeholder: propTypes.string,
-  data: propTypes.array,
-  styleClass: propTypes.string,
-  onChange: propTypes.func
-}
-
-Dropdown.defaultProps = {
-    value: "",
-    placeholder: "",
-    styleClass: ""
-}
-
 export default Dropdown

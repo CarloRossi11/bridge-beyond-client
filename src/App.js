@@ -11,7 +11,7 @@ function App() {
   const [loading, setLoading] = useState(true)
   const [list, setList] = useState([]);
   const [cats, setCats] = useState([]);
-  const [checked, setChecked] = useState([]);
+  const [checked, setChecked] = useState(true);
   const [search, setSearch] = useState('')
 
 //Fetch Resource Logic
@@ -50,10 +50,6 @@ function App() {
     setChecked(checked)
   }
 
-  const handleDropdown =() => {
-    
-  }
-
   return (
     <div className="App">
       <Header/>
@@ -66,19 +62,18 @@ function App() {
           <input type="text" placeholder="Resource Name" onChange={e =>setSearch(e.target.value) }/>
         </div>
 
-        <div className="cats">          
-          {/* {cats.map(category => 
+        {/* <div className="cats">          
+          {cats.map(category => 
             // <div>{category.name}{category.id}</div>
             <Checkbox label={category.name} onChange={handleCheckbox} selected={checked}/>
-          )} */}
-        </div>
+          )}
+        </div> */}
 
-        <Dropdown 
-          data={cats.map(category => 
+        <Dropdown placeholder='Categories'>
+        {cats.map(category => 
             <Checkbox label={category.name} onChange={handleCheckbox} selected={checked}/>
           )}
-          placeholder='Categories'
-          onChange={handleDropdown}/>
+        </Dropdown>
 
         <ul>
           {loading ? <div>...Loading</div> : filteredList.map(resource =>
