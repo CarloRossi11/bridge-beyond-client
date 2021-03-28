@@ -62,9 +62,9 @@ ul{
   height: var(--button-size);
   background-color: #253551;
   text-decoration: none;
-  color: white;
+  color: #e0e0db;
   border-radius: 5px;
-  padding: 5px;
+  padding: 7px;
   margin: 5px;
   display: flex;
   align-items: center;
@@ -102,13 +102,17 @@ ul{
 
 @media all and (max-width: 615px) {
   .search{
-    max-width: 50%;
+    max-width: 60%;
+    padding: 2%;
   }
   .dropcontents{
-    max-width: 80%;
+    max-width: 90%;
   }
   .catchecks{
     margin: 8px;
     font-weight: bold;
+  }
+  .footer{
+    width: 80%;
   }
 }

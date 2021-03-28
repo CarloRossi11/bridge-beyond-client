@@ -8,7 +8,7 @@ import { getList } from './components/List'
 import { getCats } from './components/CatCall'
 
 function App() {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [list, setList] = useState([]);
   const [cats, setCats] = useState([]);
   const [checked, setChecked] = useState(true);
@@ -21,10 +21,10 @@ function App() {
       .then(resources => {
         if(mounted) {
           setList(resources)
+          setLoading(true)
+        return () => mounted = false;
         }
       })
-      setLoading(false)
-    return () => mounted = false;
   }, [])
 
 //Fetch Category Logic
@@ -36,8 +36,6 @@ function App() {
             setCats(categories)
           }
         })
-        setLoading(false)
-      return () => mounted = false;
     }, [])
 
 //Search Logic
@@ -48,6 +46,11 @@ function App() {
 //Checkbox Logic
   const handleCheckbox = (checked) => {
     setChecked(checked)
+    if (Checkbox.selected === {checked}){
+      //if the category.name checkbox is selceted, then display resource ul below
+      // -else-
+      // set resource to display:"none"
+    }
   }
 
   return (
@@ -59,7 +62,7 @@ function App() {
 
         <div className="search">
           <p className="searchtext">Search by Resource Name</p>
-          <input type="text" placeholder="Resource Name" onChange={e =>setSearch(e.target.value) }/>
+          <input type="text" placeholder="Resource Name" onChange={e =>setSearch(e.target.value)}/>
         </div>
 
         {/* <div className="cats">          
@@ -76,7 +79,7 @@ function App() {
         </Dropdown>
 
         <ul>
-          {loading ? <div>...Loading</div> : filteredList.map(resource =>
+          {loading ? filteredList.map(resource =>
             <div className="resources" key={resource.id}>
               <h2>{resource.name}</h2>
               <p>{resource.description}</p>
@@ -84,8 +87,9 @@ function App() {
               <p>{resource.contact_information}</p>
               {/* category info */}
               {resource.categories.map(category => <div>{category.name}</div>)}
-            </div>
-            )}
+            </div> 
+            ) : <div>...Loading</div>
+            }
         </ul>
 
       </div>
