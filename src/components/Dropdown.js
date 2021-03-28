@@ -4,7 +4,7 @@ function Dropdown(props) {
   const [open, setOpen] = useState(false);
 
   return (
-    <ul className="nav-item">
+    <div className="nav-item">
       <a
         href="#"
         className="icon-button"
@@ -14,8 +14,8 @@ function Dropdown(props) {
       >
         Categories
       </a>
-      <div className="catchecks">{open && props.children}</div>
-    </ul>
+      <div className="dropcontents">{open && props.children}</div>
+    </div>
   );
 }
 export default Dropdown;

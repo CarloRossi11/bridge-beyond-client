@@ -71,7 +71,7 @@ function App() {
 
         <Dropdown placeholder='Categories'>
         {cats.map(category => 
-            <Checkbox label={category.name} onChange={handleCheckbox} selected={checked}/>
+            <Checkbox styleClass="catchecks" label={category.name} onChange={handleCheckbox} selected={checked}/>
           )}
         </Dropdown>
 

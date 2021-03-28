@@ -87,13 +87,28 @@ ul{
   overflow: hidden;
 }
 
+.dropcontents{
+  max-width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
 
-
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.catchecks{
+  margin: 5px;
 }
 
 
+@media all and (max-width: 615px) {
+  .search{
+    max-width: 50%;
+  }
+  .dropcontents{
+    max-width: 80%;
+  }
+  .catchecks{
+    margin: 8px;
+    font-weight: bold;
+  }
+}
