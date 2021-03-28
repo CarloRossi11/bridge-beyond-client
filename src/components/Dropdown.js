@@ -5,15 +5,15 @@ function Dropdown(props) {
 
   return (
     <div className="nav-item">
-      <a
-        href="#"
+      <div
+        // href="#"
         className="icon-button"
         onClick={() => {
           setOpen(!open);
         }}
       >
         Categories
-      </a>
+      </div>
       <div className="dropcontents">{open && props.children}</div>
     </div>
   );
