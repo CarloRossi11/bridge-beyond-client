@@ -1,16 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 function Dropdown(props) {
+  const [open, setOpen] = useState(false);
 
-    const [open, setOpen] = useState(false)
-
-    return(
-    <li className="nav-item">
-      <a href="#" className="icon-button" onClick={() => {setOpen(!open)}}>
+  return (
+    <ul className="nav-item">
+      <a
+        href="#"
+        className="icon-button"
+        onClick={() => {
+          setOpen(!open);
+        }}
+      >
         Categories
       </a>
-      {open && props.children}
-    </li>
-    )
+      <div className="catchecks">{open && props.children}</div>
+    </ul>
+  );
 }
-export default Dropdown
+export default Dropdown;

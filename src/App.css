@@ -53,16 +53,19 @@ ul{
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .icon-button {
   --button-size:calc(var(--nav-size) * 0.5);
   width: var(--button-size);
   height: var(--button-size);
-  background-color: #484a4d;
-  border-radius: 50%;
+  background-color: #253551;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
   padding: 5px;
-  margin: 2px;
+  margin: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
