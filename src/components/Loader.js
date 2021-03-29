@@ -2,9 +2,7 @@ import React from "react";
 
 
 function Loader() {
-    const delayer = {
-      animationDelay: 2
-    }
+    
   return (
     <div className="loaderbod">
       <div class="wavy">
