@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import Header from './components/Header'
 import Footer from './components/Footer'
+import Loader from './components/Loader'
 import Checkbox from './components/Checkbox'
 import Dropdown from './components/Dropdown'
 import { getList } from './components/List'
@@ -88,12 +89,11 @@ function App() {
               {/* category info */}
               {resource.categories.map(category => <div>{category.name}</div>)}
             </div> 
-            ) : <div>...Loading</div>
+            ) : <Loader/>
             }
         </ul>
 
       </div>
-
       <Footer/>
     </div>
   );

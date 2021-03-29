@@ -100,6 +100,67 @@ ul{
   margin: 5px;
 }
 
+.loaderbod{
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  min-height: 100vh;
+}
+
+.wavy{
+  position: relative;
+}
+.wavy span{
+  position: relative;
+  display: inline-block;
+  font-size: 2em;
+  animation: animate 1.5s ease-in-out infinite;
+}
+#one{
+  animation-delay: calc(0.1s)
+}
+#two{
+  animation-delay: calc(0.2s)
+}
+#three{
+  animation-delay: calc(0.3s)
+}
+#four{
+  animation-delay: calc(0.4s)
+}
+#five{
+  animation-delay: calc(0.5s)
+}
+#six{
+  animation-delay: calc(0.6s)
+}
+#seven{
+  animation-delay: calc(0.7s)
+}
+#eight{
+  animation-delay: calc(0.8s)
+}
+#nine{
+  animation-delay: calc(0.9s)
+}
+#ten{
+  animation-delay: calc(1s)
+}
+
+@keyframes animate{
+  0%{
+      transform: translateY(0px);
+  }
+  20%{
+      transform: translateY(-20px);
+  }
+  40%,100%{
+      transform: translateY(0px);
+  }
+}
+
+
 
 @media all and (max-width: 615px) {
   .search{
