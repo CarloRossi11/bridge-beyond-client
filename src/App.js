@@ -66,13 +66,6 @@ function App() {
           <input type="text" placeholder="Resource Name" onChange={e =>setSearch(e.target.value)}/>
         </div>
 
-        {/* <div className="cats">          
-          {cats.map(category => 
-            // <div>{category.name}{category.id}</div>
-            <Checkbox label={category.name} onChange={handleCheckbox} selected={checked}/>
-          )}
-        </div> */}
-
         <Dropdown placeholder='Categories'>
         {cats.map(category => 
             <Checkbox styleClass="catchecks" label={category.name} onChange={handleCheckbox} selected={checked}/>
