@@ -48,7 +48,7 @@ function App() {
   const handleCheckbox = (checked) => {
     setChecked(checked)
     if (Checkbox.selected === {checked}){
-      //if the category.name checkbox is selceted, then display resource ul below
+      //if the category.name checkbox is selected, then display resource ul below
       // -else-
       // set resource to display:"none"
     }
