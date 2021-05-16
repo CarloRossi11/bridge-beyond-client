@@ -13,22 +13,26 @@ ul{
   background-color: #253551;
   color: #e0e0db;
   border-radius: 5px;
-  max-width: 25%;
+  max-width: 50%;
   margin: auto;
   padding: 1%;
 }
-
+.multiSelect {
+  display: block;
+  margin: auto;
+  max-width: 50%;
+}
 .searchtext{
-  font-size: large;
   margin-top: 0%;
 }
 
-.resources{
-  background-color: #e0e0db;
-  border-radius: 5px;
+.resourcesCard{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 2px;
   padding: 5px 15px 5px 15px;
   max-width: 80%;
   margin: 15px auto;
+  background-color: #FAFAFA;
 }
 
 .footer{
