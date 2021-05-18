@@ -14,7 +14,7 @@ function App() {
   const [loading, setLoading] = useState(false)
   const [list, setList] = useState([]);
   const [cats, setCats] = useState([]);
-  const [checked, setChecked] = useState(true);
+  //const [checked, setChecked] = useState(true);
   const [search, setSearch] = useState('');
   const [selected, setSelected] = useState([]);
 
@@ -69,11 +69,14 @@ function App() {
         <div>
     </div>
         {/* map data to options array */}
-        {cats.map(category => 
+        <div className="hiddenArray">   
+          {cats.map(category => 
             options.push({label:category.name, value:category.name})
-        )}
+        )}</div>
+     
         <div className="multiSelect">
           <h4>Search by Category</h4>
+         
         <MultiSelect
         options={options}
         value={selected}

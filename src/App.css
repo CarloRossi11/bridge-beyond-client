@@ -104,6 +104,9 @@ ul{
   margin: 5px;
 }
 
+.hiddenArray {
+  display: none;
+}
 /* Loader css */
 .loaderbod{
   padding-top: 50px;
