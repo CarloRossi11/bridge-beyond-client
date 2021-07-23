@@ -78,3 +78,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+# meeting notes
+### 07/18/2021
+
+#### Leanne: Clean up app component so that we can move forward and scale (2 weeks sprint)
+#### Andrew: google map research to be able to handle the different search filters as requested by Shane
+#### Carlo: backend Auth options? 
+#### Levon: front end design when in a position to do so. 
+
+#### Next meeting 08/02/2021 at 7MT to connect

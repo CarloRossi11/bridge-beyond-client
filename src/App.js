@@ -9,6 +9,8 @@ import { getList } from './components/List'
 import { getCats } from './components/CatCall'
 import MultiSelect from "react-multi-select-component";
 
+// todo: Clean up 
+// link switch
 
 function App() {
   const [loading, setLoading] = useState(false)
@@ -52,7 +54,7 @@ function App() {
 
   const setCategories = (listOf)=>{
     setSelected(listOf);
-    console.log("todo: igure out how to fire off the filteredList logic having it consider the selected categories")
+    console.log(listOf)
   }
 
   return (
@@ -68,7 +70,7 @@ function App() {
         </div>
         <div>
     </div>
-        {/* map data to options array */}
+        {/* map data to options array  had to hide the array!!*/}
         <div className="hiddenArray">   
           {cats.map(category => 
             options.push({label:category.name, value:category.name})
